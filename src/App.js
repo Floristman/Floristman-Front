@@ -6,7 +6,7 @@ import Discount from "./components/Discount";
 
 function App() {
   return (
-    <div className="App bg-bodyBackground">
+    <div className="App bg-bodyBackground font-font">
       <Navbar/>
         <Header/>
         <Discount/>

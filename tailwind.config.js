@@ -7,7 +7,12 @@ module.exports = {
     blue:'rgb(0, 21, 255)',
     white:'rgb(255, 255, 255)',
     bodyBackground:'rgba(252, 239, 228, 1)',
-    buttonBackground:'rgba(215, 83, 122, 1)'
+    buttonBackground:'rgba(215, 83, 122, 1)',
+    navText:'rgba(7, 60, 42, 1)',
+    headerText:'rgba(39, 38, 38, 1)'
+    },
+    fontFamily:{
+      font: 'Montserrat, sans-serif',
     },
     extend: {
       screens: {

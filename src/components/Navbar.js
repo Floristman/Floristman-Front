@@ -1,6 +1,6 @@
 import React from 'react'
 // import { style } from '../../utilitsTailwindCss/style'
-import navIcon from '../assets/img/Слой 0.png'
+import navIcon from '../assets/svg/Слой 0.svg'
 import navMenu from '../assets/svg/Гамбургер.svg'
 import navSearch from '../assets/svg/Поиск.svg'
 import nav from '../assets/svg/Group.svg'
@@ -16,9 +16,9 @@ function Navbar() {
                     </div>
                     <div className='flex justify-between items-center'>
                         <img src={navIcon} alt="" />
-                        <div>
-                            <h1>FLORISTMAN</h1>
-                            <p>Широкий выбор на любой вкус</p>
+                        <div className='text-navText'>
+                            <h1 className='text-center  font-[700] leading-[32px] text-[24px]'>FLORISTMAN</h1>
+                            <p className='text-[11px] leading-[14px] font-[400]'>Широкий выбор на любой вкус</p>
                         </div>
                     </div>
                     <div className="flex gap-[15px]">
