@@ -1,39 +1,39 @@
 import React from 'react'
-// import { style } from '../../utilitsTailwindCss/style'
-import navIcon from '../assets/svg/Слой 0.svg'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { style } from '../utilits/styleTailwind/style'
+import { icons } from '../utilits/icons/icons'
 import navMenu from '../assets/svg/Гамбургер.svg'
+import navFlower from '../assets/svg/Слой 0 (1).svg'
 import navSearch from '../assets/svg/Поиск.svg'
-import navBasket from '../assets/svg/Group.svg'
-import navUser from '../assets/svg/Пользователь.svg'
-import { useNavigate } from 'react-router-dom'
-import { style } from '../utilits/style'
-// import { icons } from '../utilits/icons'
+console.log(icons.navUserHover);
 
 function Navbar() {
-    const navigate=useNavigate()
+    const navigate = useNavigate()
+    const location = useLocation()
+    console.log(location.pathname);
     return (
-        <nav className='relative z-[12] bg-bodyBackground '>
-            <div className="container py-[8px]">
-                <div className="grid  justify-between items-center grid-cols-[repeat(3,auto)]">
+        <nav className='fixed top-0 left-0 w-[100%] z-[15] bg-bodyBackground '>
+            <div className="container ">
+                <div className="grid py-[8px] justify-between items-center grid-cols-[repeat(3,auto)]">
                     <div>
                         <img src={navMenu} className='hover:cursor-pointer xs:w-[15px] sm:w-[20px] md:w-[23px]' alt="" />
+                        {icons.st}
                     </div>
-                    <div className='flex items-center  hover:cursor-pointer' onClick={()=> navigate('/')}>
-                        <img src={navIcon} className='xs:w-[23px] sm:w-[35px] md:w-[42px] ' alt="" />
+                    <Link to='/' className='flex items-center  hover:cursor-pointer' >
+                        <img src={navFlower} className='xs:w-[23px] sm:w-[35px] md:w-[42px] ' alt="" />
                         <div className='text-navText'>
                             <h1 className={style.navH1}>FLORISTMAN</h1>
                             <p className={style.navP}>Широкий выбор на любой вкус</p>
                         </div>
-                    </div>
-                    {/* {icons.logo} */}
+                    </Link>
                     <div className="flex gap-[15px] items-center xs:gap-[10px] sm:gap-[10px]">
-                        <img src={navSearch} className='hover:cursor-pointer xs:w-[24px] sm:w-[30px] md:w-[38px]'  alt="" />
-                        <img src={navBasket} className='hover:cursor-pointer xs:w-[24px] sm:w-[30px] md:w-[38px]' onClick={()=>navigate('/basket')} alt="" />
-                        <img src={navUser} className='hover:cursor-pointer xs:w-[24px] sm:w-[30px] md:w-[38px]' onClick={()=>navigate('/user')} alt="" />
+                      <Link className='w-[49px]'><img src={navSearch} className='hover:cursor-pointer hover:w-[49px] xs:w-[24px] sm:w-[30px] md:w-[38px]' alt="" /></Link>
+                        <Link to='/basket' className='flex justify-center w-[49px] hover:cursor-pointer  hover:w-[49px] xs:w-[24px] sm:w-[30px] md:w-[38px]'>{location.pathname === '/basket' ? icons.navBasketHover : icons.navBasket }</Link>
+                        <Link to='/user' className='flex justify-center w-[49px] h-[46px] hover:cursor-pointer hover:w-[49px] xs:w-[24px] sm:w-[30px] md:w-[38px]'>{location.pathname === '/user' ? icons.navUserHover : icons.navUser }</Link>
                     </div>
                 </div>
             </div>
-            
+
         </nav>
     )
 }

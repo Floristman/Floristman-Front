@@ -1,13 +1,13 @@
 import React from 'react'
 import headerBg from '../assets/img/image (3).png'
-import { style } from '../utilits/style'
+import { style } from '../utilits/styleTailwind/style'
 
 function Header(props) {
     return (
         <header className={style.header}>
             <div className="container">
 
-                <div className="absolute z-[11] top-[-50px] right-0 w-[100%] xs:top-[-20px] ">
+                <div className="absolute z-[11] top-[8px] right-0 w-[100%] xs:top-[-20px] ">
                     <img className='w-[100%]' src={headerBg} alt="" />
                 </div>
                 {/* <div className="absolute z-[11] top-[-50px] right-0 w-[100%] hidden xs:block">

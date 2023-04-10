@@ -13,6 +13,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/basket" element={<Basket/>}/>
         <Route path="/user" element={<User/>}/>
+        <Route path="/*" element={'Error 404'}/>
       </Routes>
     </div>
   );
