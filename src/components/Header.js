@@ -1,21 +1,30 @@
 import React from 'react'
-import headerBg from '../assets/img/image.png'
+import headerBg from '../assets/img/image (3).png'
+import { style } from '../utilits/style'
 
-function Header() {
+function Header(props) {
     return (
-        <header className='bg-white relative'>
+        <header className={style.header}>
             <div className="container">
 
-                <div className="absolute top-[-70px] right-0 w-[100%]">
+                <div className="absolute z-[11] top-[-50px] right-0 w-[100%] xs:top-[-20px] ">
                     <img className='w-[100%]' src={headerBg} alt="" />
                 </div>
-                <div className="pt-[320px] pb-[90px] relative z-10">
+                {/* <div className="absolute z-[11] top-[-50px] right-0 w-[100%] hidden xs:block">
+                    <img className='w-[100%]' src={headerBgXs} alt="" />
+                </div> */}
+                <div className=" relative z-[12] xs:max-w-[320px] max-w-[800px] sm:max-w-[400px]">
 
-                    <h1 className='text-headerText font-[400] text-[24px] leading-[31px]'>Подарите ощущение праздника</h1>
-                    <p className='text-headerText mt-[7px] mb-[28px] text-[64px] font-[700] leading-[78px] tracking-[0.02em]' >Собираем букеты, <br /> созданные для Вас</p>
-                    <button className='py-[23px] px-[40px] bg-buttonBackground rounded-[37px] text-white font-[700] text-[24px] leading-[30px]' >Выбрать букет</button>
+                    <h1 className={style.headerH1}>{props.h1}</h1>
+                    <p className={style.headerP} >{props.p}</p>
+                    <button className={props.btn && style.headerBtn}>{props.btn}</button>
+
+                    <p className='text-headerText  text-[24px] font-[700] leading-[29px] mb-[25px] tracking-[0.02em] hidden  xs:block' >{props.p}</p>
+                    <h1 className='text-headerText font-[400] text-[12px] leading-[14px] hidden xs:block'>{props.h1}</h1>
+
                 </div>
             </div>
+            <h1>{props.name}</h1>
         </header>
     )
 }

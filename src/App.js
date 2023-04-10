@@ -1,17 +1,18 @@
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Header from "./components/Header";
-import Discount from "./components/Discount";
+import Home from "./router/Home";
+import Basket from "./components/Basket";
+import User from "./components/User";
 
 
 function App() {
   return (
-    <div className="App bg-bodyBackground font-font">
+    <div className="App font-font">
       <Navbar/>
-        <Header/>
-        <Discount/>
       <Routes>
-        {/* <Route path="" element={}/> */}
+        <Route path="/" element={<Home/>}/>
+        <Route path="/basket" element={<Basket/>}/>
+        <Route path="/user" element={<User/>}/>
       </Routes>
     </div>
   );

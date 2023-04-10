@@ -6,7 +6,7 @@ import 'swiper/css/grid';
 
 function Discount() {
     return (
-        <main>
+        <main className='mt-[-120px] xs:mt-[-20px] sm:mt-[-50px] md:mt-[-20px] relative z-[1] bg-bodyBackground'>
             <div className="container">
                 <h1>Скидки</h1>
                 <div className="carusel">

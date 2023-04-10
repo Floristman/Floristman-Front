@@ -1,0 +1,8 @@
+export const style  = {
+    navH1:'text-center  font-[700] leading-[32px] text-[24px] xs:text-[13px] xs:leading-[17px] sm:text-[18px] sm:leading-[23px] md:text-[22px] md:leading-[28px]',
+    navP:'text-[11px] leading-[14px] font-[400] xs:text-[6px] xs:leading-[7px] sm:text-[8px] sm:leading-[9px] md:text-[10px] md:leading-[12px]',
+    header:'bg-white relative pt-[320px] pb-[190px] xs:pt-[122px] xs:pb-[50px] sm:pt-[150px] sm:pb-[100px] md:pt-[220px] md:pb-[120px]',
+    headerH1:'text-headerText font-[400] text-[24px] leading-[31px] xs:hidden sm:text-[16px] sm:leading-[25px] md:text-[20px] md:leading-[28px] ',
+    headerP:'text-headerText mt-[7px] mb-[28px] text-[64px] font-[700] leading-[78px] tracking-[0.02em]  xs:hidden sm:text-[32px] sm:leading-[36px] md:text-[48px] md:leading-[52px]',
+    headerBtn:'py-[23px] px-[40px] bg-buttonBackground rounded-[37px] text-white font-[700] text-[24px] leading-[30px] xs:hidden sm:py-[16px] sm:px-[26px] sm:text-[16px] sm:leading-[22px]'
+}
