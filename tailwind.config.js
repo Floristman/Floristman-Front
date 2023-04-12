@@ -9,7 +9,6 @@ module.exports = {
       md: { 'min': '768px', 'max': '992px' },
       lg: { 'min': '992px', 'max': '1200px' },
       xl: {'min':'1200px'},
-      
     },
     container: {
       center: true,
@@ -25,8 +24,16 @@ module.exports = {
         navText: 'rgba(7, 60, 42, 1)',
         headerText: 'rgba(39, 38, 38, 1)',
         buttonBackgroundHover:'rgb(239,67,118)',
+<<<<<<< HEAD
         registerBackground:'rgba(255, 240, 228, 1)',
         registerColor:'rgba(253, 79, 121, 1)'
+=======
+        element1BG: 'rgba(253, 79, 121, 1)',
+        element2BG: 'rgba(74, 233, 80, 1)',
+        element3BG: 'rgba(253, 152, 79, 1)',
+        element4BG: 'rgba(241, 235, 76, 1)',
+        discountColor: 'rgba(126, 160, 72, 1)',
+>>>>>>> 8c6c9998423cc9b7b0075168c1de5009947ba2fd
       },
       fontFamily: {
         font: 'Montserrat, sans-serif ',
