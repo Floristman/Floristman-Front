@@ -3,11 +3,11 @@ import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import caruselImg from '../assets/img/Ромашки для наташки.png'
+import caruselImg from '../../assets/img/Ромашки для наташки.png'
 import 'swiper/css/grid';
-import { style } from '../utilits/styleTailwind/style';
-import Flower1 from '../assets/img/Flower1.png'
-import Flower2 from '../assets/img/Flower2.png'
+import { style } from '../../utilits/styleTailwind/style';
+import Flower1 from '../../assets/img/Flower1.png'
+import Flower2 from '../../assets/img/Flower2.png'
 
 function Discount() {
     return (
