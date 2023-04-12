@@ -1,8 +1,11 @@
 import React from 'react'
+import Register from './Register'
 
 function User() {
   return (
-    <div className='h-[10000px]'>User</div>
+    <section>
+      <Register/>
+    </section>
   )
 }
 

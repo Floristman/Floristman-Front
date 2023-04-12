@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react'
-import caruselImg from '../assets/img/Ромашки для наташки.png'
+import caruselImg from '../../assets/img/Ромашки для наташки.png'
 import 'swiper/css/grid';
 
 function Discount() {

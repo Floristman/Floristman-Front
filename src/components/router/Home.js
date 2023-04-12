@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from '../components/Header'
-import Discount from '../components/Discount'
+import Header from '../pages/Header'
+import Discount from '../pages/Discount'
 
 function Home(props) {
   return (

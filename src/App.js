@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./router/Home";
-import Basket from "./components/Basket";
-import User from "./components/User";
+import Navbar from "./components/pages/Navbar";
+import Home from "./components/router/Home";
+import Basket from "./components/pages/Basket";
+import User from "./components/pages/User";
 
 
 function App() {

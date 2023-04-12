@@ -1,14 +1,13 @@
 import React from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { style } from '../utilits/styleTailwind/style'
-import { icons } from '../utilits/icons/icons'
-import navMenu from '../assets/svg/Гамбургер.svg'
-import navFlower from '../assets/svg/Слой 0 (1).svg'
-import navSearch from '../assets/svg/Поиск.svg'
+import { Link, useLocation } from 'react-router-dom'
+import { style } from '../../utilits/styleTailwind/style'
+import { icons } from '../../utilits/icons/icons'
+import navMenu from '../../assets/svg/Гамбургер.svg'
+import navFlower from '../../assets/svg/Слой 0 (1).svg'
+import navSearch from '../../assets/svg/Поиск.svg'
 console.log(icons.navUserHover);
 
 function Navbar() {
-    const navigate = useNavigate()
     const location = useLocation()
     console.log(location.pathname);
     return (

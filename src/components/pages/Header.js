@@ -1,6 +1,6 @@
 import React from 'react'
-import headerBg from '../assets/img/image (3).png'
-import { style } from '../utilits/styleTailwind/style'
+import headerBg from '../../assets/img/image (3).png'
+import { style } from '../../utilits/styleTailwind/style'
 
 function Header(props) {
     return (

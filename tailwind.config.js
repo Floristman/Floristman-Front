@@ -4,7 +4,7 @@ module.exports = {
   theme: {
 
     screens: {
-      xs: { 'min': '320px', 'max': '576gipx' },
+      xs: { 'min': '320px', 'max': '576px' },
       sm: { 'min': '576px', 'max': '768px' },
       md: { 'min': '768px', 'max': '992px' },
       lg: { 'min': '992px', 'max': '1200px' },
@@ -24,11 +24,16 @@ module.exports = {
         buttonBackground: 'rgba(215, 83, 122, 1)',
         navText: 'rgba(7, 60, 42, 1)',
         headerText: 'rgba(39, 38, 38, 1)',
-        buttonBackgroundHover:'rgb(239,67,118)'
+        buttonBackgroundHover:'rgb(239,67,118)',
+        registerBackground:'rgba(255, 240, 228, 1)',
+        registerColor:'rgba(253, 79, 121, 1)'
       },
       fontFamily: {
-        font: 'Montserrat, sans-serif',
+        font: 'Montserrat, sans-serif ',
       },
+      backgroundImage:{
+        headerBg:"url('assets/img/image (3).png')"
+      }
     },
 
   },
