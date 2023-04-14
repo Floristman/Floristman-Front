@@ -13,15 +13,14 @@ function Header(props) {
                 {/* <div className="absolute z-[11] top-[-50px] right-0 w-[100%] hidden xs:block">
                     <img className='w-[100%]' src={headerBgXs} alt="" />
                 </div> */}
-                <div className=" relative z-[12] xs:max-w-[320px] max-w-[800px] sm:max-w-[400px]">
+                <div className=" relative z-[12]  ">
 
-                    <h1 className={style.headerH1}>{props.h1}</h1>
-                    <p className={style.headerP} >{props.p}</p>
+                    <h1 className={props.btn && style.headerH1}>{props.h1}</h1>
+                    <p className={style.headerP} >{props.pStart} <br />{props.pEnd}</p>
                     <button className={props.btn && style.headerBtn}>{props.btn}</button>
 
-                    <p className='text-headerText  text-[24px] font-[700] leading-[29px] mb-[25px] tracking-[0.02em] hidden  xs:block' >{props.p}</p>
+                    <p className='text-headerText  text-[24px] font-[700] leading-[29px] mb-[25px] tracking-[0.02em] hidden  xs:block' >{props.pStart} <br />{props.pEnd}</p>
                     <h1 className='text-headerText font-[400] text-[12px] leading-[14px] hidden xs:block'>{props.h1}</h1>
-
                 </div>
             </div>
             <h1>{props.name}</h1>

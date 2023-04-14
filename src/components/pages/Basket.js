@@ -4,7 +4,7 @@ import Header from './Header'
 function Basket() {
   return (
     <div>
-        <Header p='Корзина'/>
+        <Header pStart='Корзина'/>
     </div>
   )
 }
