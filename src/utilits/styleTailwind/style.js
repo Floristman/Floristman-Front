@@ -9,5 +9,5 @@ export const style  = {
     cardDesc: 'text-black font-[500] text-[16px] leading-[20px]',
     priceText1: 'font-[500] text-[13px] leading-[15px] line-through',
     priceText2: 'font-[500] text-[16px] leading-[20px] ',
-    orderButton: 'py-[10px] px-[35px] rounded-[20px] bg-[#D7537A] font-[600] text-[18px] leading-[21px] text-white'
+    orderButton: 'py-[10px] px-[35px] rounded-[20px] bg-[#D7537A] font-[600] text-[18px] leading-[21px] text-white hover:bg-buttonBackgroundHover'
 }
