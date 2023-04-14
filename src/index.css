@@ -10,7 +10,7 @@
     }
 }
 
-.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-horizontal .swiper-pagination-bullets .swiper-pagination-bullet,
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
     width: 42px;
     height: 10px;
@@ -18,7 +18,48 @@
     border-radius: 5px;
 }
 
-.swiper-pagination-bullet-active{
+.swiper-pagination-bullet-active {
     background-color: #D7537A !important;
 }
- /* branch arsen */
+
+.register .react-tel-input {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 17px;
+    background-color: white;
+}
+
+.register .react-tel-input .form-control {
+    border: none;
+    width: unset;
+    height: unset;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 400;
+    font-family: 'Montserrat, sans-serif';
+    padding-left: 0;
+}
+
+.register .react-tel-input .flag-dropdown {
+    border: none;
+    border-radius: 17px;
+}
+
+.register .react-tel-input .selected-flag {
+    outline: none;
+    position: unset;
+    width: unset;
+    height: unset;
+    padding: unset;
+    border-radius: unset;
+}
+.register .react-tel-input .selected-flag .flag{
+    margin-left: 8px;
+}
+.register .react-tel-input .country-list{
+    top: 37px;
+    border-radius: 17px;
+
+}
+
+/* created arsen branch */
