@@ -31,9 +31,15 @@ module.exports = {
         element3BG: 'rgba(253, 152, 79, 1)',
         element4BG: 'rgba(241, 235, 76, 1)',
         discountColor: 'rgba(126, 160, 72, 1)',
+        infoBoxColor: 'rgba(255, 248, 245, 1)',
+        catalogBoxColor: 'rgba(255, 248, 245, 0.85)'
+      },
+      boxShadow: {
+        'AboutBoxShadow': '0px 2px 4px rgba(0, 0, 0, 0.25)',
       },
       fontFamily: {
         font: 'Montserrat, sans-serif ',
+        lato: 'Lato, sans-serif;' 
       },
       backgroundImage:{
         headerBg:"url('assets/img/image (3).png')"

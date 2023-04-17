@@ -1,8 +1,7 @@
 import React from 'react'
-
-import Flower1 from '../../../assets/img/Flower1.png'
-import Flower2 from '../../../assets/img/Flower2.png'
-import Carusel from '../Swiper/Carusel';
+import Flower1 from '../../assets/img/Flower1.png'
+import Flower2 from '../../assets/img/Flower2.png'
+import Carusel from './Swiper/Carusel';
 
 function Discount() {
     return (

@@ -5,9 +5,11 @@ import { icons } from '../../utilits/icons/icons'
 import navMenu from '../../assets/svg/Гамбургер.svg'
 import navFlower from '../../assets/svg/Слой 0 (1).svg'
 import navSearch from '../../assets/svg/Поиск.svg'
+console.log(icons.navUserHover);
 
 function Navbar() {
     const location = useLocation()
+    console.log(location.pathname);
     return (
         <nav className='fixed top-0 left-0 w-[100%] z-[15] bg-bodyBackground '>
             <div className="container ">

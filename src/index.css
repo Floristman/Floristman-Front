@@ -3,7 +3,7 @@
 @tailwind utilities;
 /* @import url('https://fonts.cdnfonts.com/css/gadugi?styles=66187'); */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 @layer components {
     .container {
         @apply max-w-[1200px]
@@ -59,4 +59,8 @@
 .register .react-tel-input .country-list{
     top: 37px;
     border-radius: 17px;
+
 }
+
+/* created arsen branch */
+/* created arsen branch */

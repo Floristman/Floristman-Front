@@ -4,7 +4,7 @@ import {
 } from "@reduxjs/toolkit/query/react";
 
 export const userSlice = createApi({
-    reducerPath: "userApi",
+    reducerPath: "tasksApi",
     baseQuery: fetchBaseQuery({
         baseUrl: "http://localhost:7000/"
     }),
