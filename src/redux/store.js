@@ -1,10 +1,10 @@
-// import { configureStore } from "@reduxjs/toolkit";
-// import { taskApi } from "./services/taskApi";
+import { configureStore } from "@reduxjs/toolkit";
+import { userSlice } from "./UserSlice";
 
-// export const store = configureStore({
-//   reducer: {
-//     [taskApi.reducerPath]: taskApi.reducer
-//   },
-//   middleware: (getDefaultMiddleware) =>
-//     getDefaultMiddleware().concat(taskApi.middleware)
-// });
+export const store = configureStore({
+  reducer: {
+    [userSlice.reducerPath]: userSlice.reducer
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(userSlice.middleware)
+});

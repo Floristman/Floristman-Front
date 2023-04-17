@@ -1,7 +1,6 @@
 import React from 'react'
-import Header from '../Header'
-import Discount from '../Discount'
-import Flowers from '../Flowers/Flowers'
+import Header from '../../Header/Header'
+import Discount from './Discount'
 
 function Home(props) {
   return (

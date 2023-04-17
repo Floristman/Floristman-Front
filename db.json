@@ -1,3 +1,20 @@
 {
-    "users":[]
+  "users": [
+    {
+      "phoneNumber": "998123456789",
+      "name": "asdfgh",
+      "email": "aaa@maol.ru",
+      "isLoading": true,
+      "password": "",
+      "id": 1
+    },
+    {
+      "phoneNumber": "998789878987",
+      "name": "sdadaadsadd",
+      "email": "ggvgvvv@email.com",
+      "isLoading": true,
+      "password": "qw12",
+      "id": 2
+    }
+  ]
 }
