@@ -1,14 +1,14 @@
 import React from 'react'
-import Header from '../../Header/Header'
-import flower from '../../../assets/img/200117200513_484017 3.png'
-import img1 from '../../../assets/img/imgonline-com-ua-HueSatLum-22AfGeH0Ba 1.png'
-import img2 from '../../../assets/img/imgonline-com-ua-HueSatLum-AjF7sCF4zQoHZf 1.png'
-import img3 from '../../../assets/img/200117200513_484017 4.png'
+import flower from '../../../../assets/img/200117200513_484017 3.png'
+import img1 from '../../../../assets/img/imgonline-com-ua-HueSatLum-22AfGeH0Ba 1.png'
+import img2 from '../../../../assets/img/imgonline-com-ua-HueSatLum-AjF7sCF4zQoHZf 1.png'
+import img3 from '../../../../assets/img/200117200513_484017 4.png'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Pagination } from 'swiper'
+import Header from '../../../Header/Header'
 
 function Flowers(props) {
   return (

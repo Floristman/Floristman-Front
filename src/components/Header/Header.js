@@ -1,8 +1,10 @@
 import React from 'react'
 import headerBg from '../../assets/img/image (3).png'
 import { style } from '../../utilits/styleTailwind/style'
+import { useNavigate } from 'react-router-dom'
 
 function Header(props) {
+    const navigate =useNavigate()
     return (
         <header className={style.header}>
             <div className="container">
@@ -17,7 +19,7 @@ function Header(props) {
 
                     <h1 className={props.btn && style.headerH1}>{props.h1}</h1>
                     <p className={style.headerP} >{props.pStart} <br />{props.pEnd}</p>
-                    <button className={props.btn && style.headerBtn}>{props.btn}</button>
+                    <button onClick={()=> navigate('/catalog')} className={props.btn && style.headerBtn}>{props.btn}</button>
 
                     <p className='text-headerText  text-[24px] font-[700] leading-[29px] mb-[25px] tracking-[0.02em] hidden  xs:block' >{props.pStart} <br />{props.pEnd}</p>
                     <h1 className='text-headerText font-[400] text-[12px] leading-[14px] hidden xs:block'>{props.h1}</h1>

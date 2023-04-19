@@ -9,7 +9,7 @@ import navSearch from '../../assets/svg/Поиск.svg'
 function Navbar() {
     const location = useLocation()
     return (
-        <nav className='fixed top-0 left-0 w-[100%] z-[15] bg-bodyBackground '>
+        <nav className='fixed top-0 left-0 w-[100%] z-[15] bg-bodyBackground shadow-navbarShadow'>
             <div className="container ">
                 <div className="grid py-[8px] justify-between items-center grid-cols-[repeat(3,auto)]">
                     <div>
@@ -26,7 +26,7 @@ function Navbar() {
                     <div className="flex gap-[15px] items-center xs:gap-[10px] sm:gap-[10px]">
                       <Link className='w-[49px]'><img src={navSearch} className='hover:cursor-pointer hover:w-[49px] xs:w-[24px] sm:w-[30px] md:w-[38px]' alt="" /></Link>
                         <Link to='/basket' className='flex justify-center w-[49px] hover:cursor-pointer  hover:w-[49px] xs:w-[24px] sm:w-[30px] md:w-[38px]'>{location.pathname === '/basket' ? icons.navBasketHover : icons.navBasket }</Link>
-                        <Link to='/user' className='flex justify-center w-[49px] h-[46px] hover:cursor-pointer hover:w-[49px] xs:w-[24px] sm:w-[30px] md:w-[38px]'>{location.pathname === '/user' ? icons.navUserHover : icons.navUser }</Link>
+                        <Link to={style?'/personalarea':'/register'} className='flex justify-center w-[49px] h-[46px] hover:cursor-pointer hover:w-[49px] xs:w-[24px] sm:w-[30px] md:w-[38px]'>{location.pathname === '/user' ? icons.navUserHover : icons.navUser }</Link>
                     </div>
                 </div>
             </div>

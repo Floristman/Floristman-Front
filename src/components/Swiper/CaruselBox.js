@@ -1,6 +1,6 @@
 import React from 'react'
-import { style } from '../../../utilits/styleTailwind/style'
-import caruselImg from '../../../assets/img/Ромашки для наташки.png'
+import { style } from '../../utilits/styleTailwind/style'
+import caruselImg from '../../assets/img/Ромашки для наташки.png'
 import { useNavigate } from 'react-router-dom'
 
 function Swiper() {

@@ -1,9 +1,9 @@
 import React from 'react'
 import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import caruselImg from '../../../assets/img/Ромашки для наташки.png'
-import { style } from '../../../utilits/styleTailwind/style';
-import CaruselBox from '../Swiper/CaruselBox'
+import caruselImg from '../../assets/img/Ромашки для наташки.png'
+import CaruselBox from './CaruselBox.js'
+import {style} from '../../utilits/styleTailwind/style'
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/grid';
@@ -22,7 +22,7 @@ function Carusel() {
             onSlideChange={() => console.log('slide change')}
         >
             <SwiperSlide>
-                <CaruselBox />
+                <CaruselBox/>
             </SwiperSlide>
             <SwiperSlide>
                 <div className="max-w-[284px] rounded-r-[20px] rounded-br-[20px] rounded-bl-[20px] card px-[10px] pt-[10px] pb-[35px] mb-[40px] bg-white">

@@ -37,6 +37,9 @@ module.exports = {
       },
       backgroundImage:{
         headerBg:"url('assets/img/image (3).png')"
+      },
+      boxShadow:{
+        navbarShadow: '0px 4px 4px rgba(0, 0, 0, 0.05)',
       }
     },
 
