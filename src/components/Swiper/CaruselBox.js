@@ -3,7 +3,7 @@ import { style } from '../../utilits/styleTailwind/style'
 import caruselImg from '../../assets/img/Ромашки для наташки.png'
 import { useNavigate } from 'react-router-dom'
 
-function Swiper() {
+function CarouselBox() {
     const navigate =useNavigate()
     return (
         <div className="max-w-[284px] rounded-r-[20px] rounded-br-[20px] rounded-bl-[20px] card px-[10px] pt-[10px] pb-[35px] mb-[40px] bg-white">
@@ -25,7 +25,7 @@ function Swiper() {
             <div className="elemet mt-[50px] flex items-center justify-between">
                 <div className="text-center">
                     <p className={`text-[#8E8D6F] ${style.priceText1}`}>5 400 грн</p>
-                    <p className={`text-[#8E8D6F] ${style.priceText2}`}>3 700 грн</p>
+                    <p className={`text-[#7EA048] ${style.priceText2}`}>3 700 грн</p>
                 </div>
                 <div className="orderBtn">
                     <button onClick={()=>navigate('/flowers')} className={style.orderButton}>Заказать</button>
@@ -35,4 +35,4 @@ function Swiper() {
     )
 }
 
-export default Swiper
+export default CarouselBox

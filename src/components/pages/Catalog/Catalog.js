@@ -1,6 +1,7 @@
 import React from 'react'
 
-function Catalog() {
+function Catalog(props) {
+  console.log(props);
   return (
     <div className='pt-[100px]'>Catalog</div>
   )

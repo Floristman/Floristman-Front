@@ -30,12 +30,18 @@ function CheckingEmail() {
   // onChange
   
   const passwordHandle = (e) => {
+    setPasswordDirty(true)
     setPassword(e.target.value)
-    console.log(e.target.value.length);
-    if(e.target.value.length === 0 ){
-      setPasswordError('Пароль не может быть пустым ')
+    if(e.target.value.length === 0) {
+      setPasswordError('пароль не может быть пустым')
+    }else if (e.target.value.length > 0 && e.target.value.length <=3 ) {
+      setPasswordError('Пароль должен быть минимум 3 цифр')
+    } else if (!isNaN(e.target.value)) {
+      setPasswordError('пароль должен содержать прописную букву')
     } else {
-      setPasswordError('')
+      // setPasswordError('')
+      setPasswordDirty(false)
+      // setPasswordCheckDirty(false)
     }
   }
   return (
