@@ -30,10 +30,11 @@ function PasswordSetting() {
         id: user.id,
         password
       };
+      localStorage.setItem('userid',user.id)
       await updateTask(passwordUpdate);
-      navigate('/user')
+      navigate('/')
     }else{
-      setPasswordDirty(true)
+      setPasswordCheckDirty(true)
     }
   }
   

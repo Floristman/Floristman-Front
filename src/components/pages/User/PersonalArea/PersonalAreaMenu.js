@@ -1,9 +1,32 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useUpdateUserMutation, useUsersQuery } from '../../../../redux/UserSlice';
 
 function PersonalAreaMenu() {
   const local = useLocation()
-  console.log(local);
+
+  const navigate =useNavigate()
+
+  const { data, isSuccess } = useUsersQuery();
+  const examination = isSuccess && data.find(element => element.email === localStorage.getItem('email') && element.isLoading )
+
+  const [updateUser] = useUpdateUserMutation();
+
+  const register = async (e) => {
+    e.preventDefault()
+    if(examination){
+      const task = {
+        name: examination.name,
+        phoneNumber: examination.phoneNumber,
+        email: examination.email,
+        isLoading: false,
+        id:examination.id
+      };
+      updateUser(task);
+      localStorage.removeItem('email')
+      navigate('/')
+    }
+  }
   return (
     <div className='grid gap-[22px] grid-cols-[repeat(1,max-content)] bg-white p-[27px] pr-[73px] rounded-[20px] '>
       <Link to='/personalarea' className={`${local.pathname === '/personalarea' ? 'text-headerText border-b border-headerText' : 'text-[#8e8d6f]'} text-[18px] leading-[21px]   font-[400] h-[24px]`}>
@@ -19,7 +42,7 @@ function PersonalAreaMenu() {
         Просмотренные
       </Link>
       <div className='mt-[50px] text-buttonBackground text-[18px] leading-[21px]  font-[400]'>
-        <button>Выйти</button>
+        <button onClick={(e)=>register(e)}>Выйти</button>
       </div>
 
     </div>
