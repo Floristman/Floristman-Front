@@ -4,10 +4,12 @@ import iconFixOne from '../../../../assets/img/imgonline-com-ua-HueSatLum-22AfGe
 import iconFixTwo from '../../../../assets/img/imgonline-com-ua-HueSatLum-AjF7sCF4zQoHZf 1.png'
 import { Link } from 'react-router-dom'
 import { style } from '../../../../utilits/styleTailwind/style'
+import Footer from '../../../Footer/Footer'
 
 function AddressBook() {
   return (
-    <section className='bg-bodyBackground relative pt-[88px] pb-[80px]'>
+    <section>
+      <div className='bg-bodyBackground relative pt-[88px] pb-[80px]'>
       <div>
         <div className='absolute top-[35px]'>
           <img src={iconFixOne} alt="" />
@@ -48,7 +50,9 @@ function AddressBook() {
             </div>
           </div>
         </div>
+        </div>
       </div>
+      <Footer/>
     </section>
   )
 }

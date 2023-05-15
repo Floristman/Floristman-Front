@@ -4,10 +4,13 @@ import iconFixTwo from '../../../../assets/img/imgonline-com-ua-HueSatLum-AjF7sC
 import PersonalAreaMenu from './PersonalAreaMenu'
 import { Link } from 'react-router-dom'
 import { style } from '../../../../utilits/styleTailwind/style'
+import Footer from '../../../Footer/Footer'
 
 function Reviews() {
+
   return (
-    <section className='bg-bodyBackground relative pt-[88px] pb-[80px]'>
+    <section>
+      <div  className='bg-bodyBackground relative pt-[88px] pb-[80px]'>
       <div>
         <div className='absolute top-[35px]'>
           <img src={iconFixOne} alt="" />
@@ -30,9 +33,10 @@ function Reviews() {
             <p className='ml-[33px] mt-[10px] text-[18px] leading-[21px] font-[500]'>Веб-дизайн — непростая сфера, провоцирующая постоянные споры. Кто-то скажет, что для привлечения внимания вашему лендингу просто необходим современный дизайн, включающий последние тенденции. Другие считают, что работающая посадочная страница, на которой посетители получают то, зачем пришли, гораздо важнее.</p>
             <p className='text-end mt-[5px] mb-[30px] text-[14px] leading-[174px] font-[400]'>12:00 12.12.2021</p>
           </div>
-
+          </div>
         </div>
       </div>
+      <Footer/>
     </section>
   )
 }

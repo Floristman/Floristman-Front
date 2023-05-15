@@ -31,15 +31,22 @@ module.exports = {
         element3BG: 'rgba(253, 152, 79, 1)',
         element4BG: 'rgba(241, 235, 76, 1)',
         discountColor: 'rgba(126, 160, 72, 1)',
+        infoBoxColor: 'rgba(255, 248, 245, 1)',
+        catalogBoxColor: 'rgba(255, 248, 245, 0.85)'
       },
       fontFamily: {
         font: 'Montserrat, sans-serif ',
       },
       backgroundImage:{
-        headerBg:"url('assets/img/image (3).png')"
+        headerBg:"url('assets/img/image (3).png')",
+        footerFrame:"url(assets/svg/Рамка.svg)",
+        deliveryBack:"url(assets/svg/изображение_2021-03-19_141853-removebg 1.svg)",
       },
       boxShadow:{
         navbarShadow: '0px 4px 4px rgba(0, 0, 0, 0.05)',
+      },
+      gridAutoColumns:{
+        offers:'2fr 1fr'
       }
     },
 
