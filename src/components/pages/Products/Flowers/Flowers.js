@@ -20,7 +20,7 @@ import { forWhom } from '../../../../utilits/link/forWhom'
 import { Contexts } from '../../../../Context/Context'
 
 function Flowers(props) {
-  const {flowerId}=useContext(Contexts)
+  const { flowerId, openClose, setOpenClose } = useContext(Contexts)
   console.log(flowerId);
   const navigate = useNavigate()
   const [productSlice] = useAddProductMutation();
@@ -92,9 +92,12 @@ function Flowers(props) {
       navigate(`/flowers/${e.id}`)
     }
   }
+  const handleMenuBody = () => {
+    setOpenClose('translate-x-[-1000px]')
+  }
 
   return (
-    <section>
+    <section onClick={() => handleMenuBody()} className={`${openClose === 'translate-x-[0px]' ? 'blur' : 'blur-none'} duration-500`}>
       <Header pStart={`Букет ${res?.productNameOne}`} />
       <div className='bg-bodyBackground relative pt-[30px] pb-[80px] xs:pb-[20px]'>
         <div className='absolute top-[40px] left-0 lg:left-[-28px] xs:hidden'>

@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Header from '../../Header/Header'
 import { icons } from '../../../utilits/icons/icons'
 import minus from '../../../assets/svg/icons8-subtract-100 1.svg'
 import plus from '../../../assets/svg/icons8-plus-math-100 1.svg'
 import Footer from '../../Footer/Footer'
 import { useDeleteProductMutation, useProductsQuery, useUpdateProductMutation } from '../../../redux/ProductSlice'
+import { Contexts } from '../../../Context/Context'
 
 function Basket() {
   const [updateProduct] = useUpdateProductMutation();
@@ -126,8 +127,13 @@ function Basket() {
       setDeliveryTwo(true)
     }
   }
+  const {openClose,setOpenClose}=useContext(Contexts)
+
+  const handleMenuBody=()=>{
+    setOpenClose('translate-x-[-1000px]')
+  }
   return (
-    <div>
+    <div onClick={()=>handleMenuBody()} className={`${openClose === 'translate-x-[0px]' ? 'blur' : 'blur-none'} duration-500`}>
       <Header className='text-[20px]' pStart='Корзина' />
       <div className='bg-bodyBackground  mt-[150px] xs:mt-[30px] pt-[35px] pb-[50px] xs:pb-[20px]'>
         <div className="container relative z-[11]">

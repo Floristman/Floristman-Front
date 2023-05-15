@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PersonalAreaMenu from './PersonalAreaMenu'
 import iconFixOne from '../../../../assets/img/imgonline-com-ua-HueSatLum-22AfGeH0Ba 1.png'
 import iconFixTwo from '../../../../assets/img/imgonline-com-ua-HueSatLum-AjF7sCF4zQoHZf 1.png'
@@ -6,10 +6,15 @@ import { Link } from 'react-router-dom'
 import { style } from '../../../../utilits/styleTailwind/style'
 import Footer from '../../../Footer/Footer'
 import PersonalAreaMenuSM from './PersonalAreaMenuSM'
+import { Contexts } from '../../../../Context/Context'
 
 function AddressBook() {
+  const {openClose,setOpenClose}=useContext(Contexts)
+  const handleMenuBody=()=>{
+    setOpenClose('translate-x-[-1000px]')
+  }
   return (
-    <section>
+    <section onClick={()=>handleMenuBody()} className={`${openClose === 'translate-x-[0px]' ? 'blur' : 'blur-none'} duration-500`}>
       <div className='bg-bodyBackground relative pt-[88px] pb-[80px] xs:pb-[20px]'>
         <div>
           <div className='absolute top-[35px] xs:hidden'>

@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import { useAddUserMutation, useUsersQuery } from '../../../../redux/UserSlice';
+import { Contexts } from '../../../../Context/Context';
 
 function Register() {
   const [phoneNumber, setPhoneNumber] = useState(false)
@@ -90,10 +91,13 @@ function Register() {
     }
   }
 
-
+  const {openClose,setOpenClose}=useContext(Contexts)
+  const handleMenuBody=()=>{
+    setOpenClose('translate-x-[-1000px]')
+  }
 
   return (
-    <section className='bg-headerBg bg-cover bg-no-repeat bg-center h-screen w-[100%]'>
+    <section onClick={()=>handleMenuBody()} className={`${openClose === 'translate-x-[0px]' ? 'blur' : 'blur-none'} duration-500 bg-headerBg bg-cover bg-no-repeat bg-center h-screen w-[100%]`}>
       <div className="container h-screen flex justify-center items-center">
         <div className="register text-center py-[34px] px-[10px] bg-registerBackground rounded-[10px] ">
           <h1 className='text-[18px] font-[700] leading-[22px] text-headerText'>Регистрация</h1>
