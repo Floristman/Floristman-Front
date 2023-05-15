@@ -20,7 +20,7 @@ function Flowers(props) {
   const { id } = useParams()
   const { data, isSuccess } = useProductsQuery();
   const res = isSuccess && data.find(element => element.productId === +id && element.userId === +localStorage.getItem('userid'))
-  const [counter, setCounter] = useState(0)
+  const [counter, setCounter] = useState(1)
   useEffect(() => {
     if (res) {
       setCounter(res.count)

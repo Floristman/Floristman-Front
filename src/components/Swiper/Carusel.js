@@ -15,30 +15,33 @@ import { useAddProductMutation, useProductsQuery } from '../../redux/ProductSlic
 function Carusel() {
     const navigate = useNavigate()
 
-    const [productSlice ] = useAddProductMutation();
+    const [productSlice] = useAddProductMutation();
     const { data, isSuccess } = useProductsQuery();
-    const handleProduct = async(e)=>{
-        const res = isSuccess && data.find(element=> element.productId === e.id)
+    const handleProduct = async (e) => {
+        const res = isSuccess && data.find(element => element.productId === e.id && element.userId === localStorage.getItem('userId') )
+        console.log(res);
         console.log(e);
-        if(res){
+        if (res && res.isLoading) {
             alert('mahsulot qoshilgan')
-        }else{
+        }else if(res && !res.isLoading){
+            navigate(`/flowers/${e.id}`)
+        } else {
             const task = {
-                textOne:e.textOne,
-                textTwo:e.textTwo,
-                textThree:e.textThree,
-                textFour:e.textFour,
-                img:e.img,
-                productNameOne:e.productNameOne,
-                productNameTwo:e.productNameTwo,
-                priceOne:e.priceOne,
-                priceTwo:e.priceTwo,
-                productId:e.id,
-                userId:+localStorage.getItem('userid'),
-                isLoading:false,
-                count:1
-              };
-              await productSlice(task);
+                textOne: e.textOne,
+                textTwo: e.textTwo,
+                textThree: e.textThree,
+                textFour: e.textFour,
+                img: e.img,
+                productNameOne: e.productNameOne,
+                productNameTwo: e.productNameTwo,
+                priceOne: e.priceOne,
+                priceTwo: e.priceTwo,
+                productId: e.id,
+                userId: +localStorage.getItem('userid'),
+                isLoading: false,
+                count: 1
+            };
+            await productSlice(task);
             navigate(`/flowers/${e.id}`)
         }
     }
@@ -48,14 +51,14 @@ function Carusel() {
             spaceBetween={15}
             slidesPerView={4}
             pagination={{ clickable: true }}
-            // onSwiper={(swiper) => console.log(swiper)}
-            // onSlideChange={() => console.log('slide change')}
+        // onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => console.log('slide change')}
         >
             {
                 forWhom && forWhom.map((element, value) => {
                     return (
                         <SwiperSlide key={value}>
-                            <div  className="max-w-[284px] rounded-r-[20px] rounded-br-[20px] rounded-bl-[20px] card px-[10px] pt-[10px] pb-[35px] mb-[40px] bg-white">
+                            <div className="max-w-[284px] rounded-r-[20px] rounded-br-[20px] rounded-bl-[20px] card px-[10px] pt-[10px] pb-[35px] mb-[40px] bg-white">
                                 <div className="relative">
                                     <div className="absolute top-[5px] left-[-5px] text-center">
                                         <p className={`bg-element1BG ${style.elementText}`} >{element.textOne}</p>
