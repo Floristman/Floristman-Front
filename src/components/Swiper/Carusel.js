@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { style } from '../../utilits/styleTailwind/style'
@@ -8,23 +8,25 @@ import 'swiper/css/grid';
 import { forWhom } from '../../utilits/link/forWhom';
 import { useNavigate } from 'react-router-dom';
 import { useAddProductMutation, useProductsQuery } from '../../redux/ProductSlice';
+import { Contexts } from '../../Context/Context';
 
 
 
 
 function Carusel() {
     const navigate = useNavigate()
-
+    const { setFlowerId, } = useContext(Contexts)
     const [productSlice] = useAddProductMutation();
     const { data, isSuccess } = useProductsQuery();
     const handleProduct = async (e) => {
-        const res = isSuccess && data.find(element => element.productId === e.id && element.userId === localStorage.getItem('userId') )
+        const res = isSuccess && data.find(element => element.productId === e.id && element.userId === localStorage.getItem('userId'))
         console.log(res);
         console.log(e);
         if (res && res.isLoading) {
             alert('mahsulot qoshilgan')
-        }else if(res && !res.isLoading){
-            navigate(`/flowers/${e.id}`)
+        } else if (res && !res.isLoading) {
+           await navigate(`/flower/${e.productNameOne}`)
+            setFlowerId(e.id)
         } else {
             const task = {
                 textOne: e.textOne,
@@ -42,7 +44,8 @@ function Carusel() {
                 count: 1
             };
             await productSlice(task);
-            navigate(`/flowers/${e.id}`)
+           await navigate(`/flower/${e.productNameOne}`)
+            setFlowerId(e.id)
         }
     }
     return (
@@ -64,7 +67,7 @@ function Carusel() {
                 1077: {
                     slidesPerView: 4,
                 },
-              }}
+            }}
             pagination={{ clickable: true }}
         // onSwiper={(swiper) => console.log(swiper)}
         // onSlideChange={() => console.log('slide change')}

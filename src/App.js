@@ -13,17 +13,26 @@ import Catalog from "./components/pages/Catalog/Catalog";
 import Flowers from "./components/pages/Products/Flowers/Flowers";
 import Login from "./components/pages/User/Register/Login";
 import Register from "./components/pages/User/Register/Register";
+import Menu from "./components/Menu/Menu";
+import { Contexts } from "./Context/Context";
+import { useState } from "react";
 // import Personal from "./components/pages/User/PersonalArea/Personal";
 
 
 function App() {
+  const [openClose,setOpenClose]=useState('translate-x-[-1000px]')
+  const[flowerId,setFlowerId]=useState('')
+  
   return (
-    <div className="App font-font">
+    <div  className="App font-font">
+      <Contexts.Provider value={{setOpenClose,openClose,setFlowerId,flowerId,}}>
+
       <Navbar/>
+      <Menu/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/basket" element={<Basket/>}/>
-        <Route path="/flowers/:id" element={<Flowers/>}/>
+        <Route path={`/flower/:id`} element={<Flowers/>}/>
         <Route path="/checkingemail" element={<CheckingEmail/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/passwordsetting" element={<PasswordSetting/>}/>
@@ -36,6 +45,7 @@ function App() {
         <Route path="/register" element={<Register/>}/>
         <Route path="/*" element={'Error 404'}/>
       </Routes>
+      </Contexts.Provider>
     </div>
   );
 }

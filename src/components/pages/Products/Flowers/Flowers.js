@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import img1 from '../../../../assets/img/imgonline-com-ua-HueSatLum-22AfGeH0Ba 1.png'
 import img2 from '../../../../assets/img/imgonline-com-ua-HueSatLum-AjF7sCF4zQoHZf 1.png'
 import img3 from '../../../../assets/img/200117200513_484017 4.png'
@@ -14,17 +14,18 @@ import plus from '../../../../assets/svg/icons8-plus-math-100 1.svg'
 import Carusel from '../../../Swiper/Carusel'
 import Footer from '../../../Footer/Footer'
 import { useAddProductMutation, useProductsQuery } from '../../../../redux/ProductSlice'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useUpdateProductMutation } from '../../../../redux/ProductSlice'
-import { style } from '../../../../utilits/styleTailwind/style'
 import { forWhom } from '../../../../utilits/link/forWhom'
+import { Contexts } from '../../../../Context/Context'
 
 function Flowers(props) {
+  const {flowerId}=useContext(Contexts)
+  console.log(flowerId);
   const navigate = useNavigate()
   const [productSlice] = useAddProductMutation();
-  const { id } = useParams()
   const { data, isSuccess } = useProductsQuery();
-  const res = isSuccess && data.find(element => element.productId === +id && element.userId === +localStorage.getItem('userid'))
+  const res = isSuccess && data.find(element => element.productId === flowerId && element.userId === +localStorage.getItem('userid'))
   const [counter, setCounter] = useState(1)
   useEffect(() => {
     if (res) {

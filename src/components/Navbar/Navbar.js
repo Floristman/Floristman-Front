@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { style } from '../../utilits/styleTailwind/style'
 import { icons } from '../../utilits/icons/icons'
@@ -7,8 +7,19 @@ import navFlower from '../../assets/svg/Слой 0 (1).svg'
 import navSearch from '../../assets/svg/Поиск.svg'
 import { useUsersQuery } from '../../redux/UserSlice'
 import { useProductsQuery } from '../../redux/ProductSlice'
+import { Contexts } from '../../Context/Context'
 
 function Navbar() {
+    const{setOpenClose,openClose}=useContext(Contexts)
+    console.log(openClose);
+    const handleMenu=()=>{
+        if(openClose === 'translate-x-[-1000px]'){
+            setOpenClose('translate-x-[0px]')
+        }else{
+            setOpenClose('translate-x-[-1000px]')
+        }
+    }
+    
     const location = useLocation()
     const { data, isSuccess } = useUsersQuery();
     const {data:dataProduct}=useProductsQuery()
@@ -18,7 +29,7 @@ function Navbar() {
         <nav className='fixed top-0 left-0 w-[100%] z-[15] bg-bodyBackground shadow-navbarShadow'>
             <div className="container ">
                 <div className="grid py-[8px] justify-between items-center grid-cols-[repeat(3,auto)]">
-                    <div>
+                    <div  onClick={()=>handleMenu()}>
                         <img src={navMenu} className='hover:cursor-pointer xs:w-[12px] sm:w-[20px] md:w-[23px]' alt="" />
                         {icons.st}
                     </div>
@@ -35,9 +46,9 @@ function Navbar() {
                             <div className={`${location.pathname === '/basket' ? 'bg-[#EB6999]' : 'bg-[#EB8671]'} absolute right-[3px] top-[-7px] bg-[#EB8671] rounded-[50%] w-[18px] flex justify-center items-center`}>
                                 <p className='text-[#FFF0E4] text-[15px] font-[700] leading-[18px]'>{product?.length}</p>
                             </div>
-                            <Link to='/basket' className='flex justify-center w-[49px] hover:cursor-pointer  hover:w-[49px] xs:w-[24px] sm:w-[30px] md:w-[38px]'>{location.pathname === '/basket' ? icons.navBasketHover : icons.navBasket}</Link>
+                            <Link to='/basket' className='flex justify-center max-w-[49px] hover:cursor-pointer  hover:scale-105 xs:w-[24px] sm:w-[30px] md:w-[38px]'>{icons.navBasket}</Link>
                         </div>
-                        <Link to={examination ? '/personalarea' : '/register'} className='flex justify-center w-[49px] h-[46px] hover:cursor-pointer hover:w-[49px] xs:w-[24px] sm:w-[30px] md:w-[38px]'>{location.pathname === '/personalarea' ||location.pathname === '/register' ? icons.navUserHover : icons.navUser}</Link>
+                        <Link to={examination ? '/personalarea' : '/register'} className='flex justify-center max-w-[49px] h-[46px] hover:cursor-pointer hover:scale-105 xs:w-[24px] sm:w-[30px] md:w-[38px]'>{icons.navUser}</Link>
                     </div>
                 </div>
             </div>
